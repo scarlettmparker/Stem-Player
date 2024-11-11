@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #343d46;
+}
+
+.slider-vertical {
+    -webkit-appearance: slider-vertical;
+
+}
