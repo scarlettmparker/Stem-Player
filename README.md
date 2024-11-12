@@ -1,34 +1,21 @@
+## Introduction
+A very simple stem player, built with SolidJS.
+
+## Setup
+Two songs have already been set up, adding new songs is a manual process.
+To add new songs, head to the `/api/assets/stemplayer` directory and create a new folder. In this folder, place all your stems (as mp3 files) and a file with no extension named after the title of the song. If you don't follow these steps entirely, your song may not work correctly.
+
 ## Usage
-
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
-
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
-
+To install the dependencies run:
 ```bash
 $ npm install # or pnpm install or yarn install
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
+In the project directory, run `npm run dev` or `npm start` to start the SolidJS server.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+You must also enter the `/api` directory and run `npm run start` to start the back-end server.
+`npm run build` builds the app for production to the `dist` folder.<br>
 
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+## License
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.
