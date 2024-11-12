@@ -1,10 +1,10 @@
 import { Accessor } from "solid-js";
 
 type Props = {
-    index: number,
+    idx: number,
     name: string,
     playing: Accessor<boolean>,
-    volume: Accessor<number[]>,
+    volume: Accessor<number>,
 }
 
 export default Props;

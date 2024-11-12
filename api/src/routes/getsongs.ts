@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     const files = {}
 
     try {
+        // iterate through sub directories and append to files list
         subdirs.map((subdir, idx) => {
             files[idx] = getFiles(dir + subdir);
             files[idx].name = subdir;
