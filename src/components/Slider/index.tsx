@@ -20,7 +20,8 @@ const Slider: Component<Props> = ({ idx, scrollRef, step, min, max, name, dir, v
     const [yPos, setYPos] = createSignal(0);
 
     // const master = setMasterValue ? true : false;
-    const divStyle = "relative w-4 mr-4 flex items-center justify-center";
+    const divStyle = "w-4 mr-4"
+        + (dir == "vertical" ? " relative flex items-center justify-center" : " absolute left-10 mt-1");
     const inputStyle = "accent-mimi bg-inherit"
         + (dir == "vertical" ? " relative left-1/2 slider-vertical h-24 w-4" : " relative w-24 mr-32"); // change direction of slider based on props
     const filteredName = name.substring(name.lastIndexOf("\\") + 1)

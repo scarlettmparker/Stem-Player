@@ -5,7 +5,8 @@ type Props = {
     name: string,
     master: Accessor<number>,
     playing: Accessor<boolean>,
-    volume: Accessor<number>
+    volume: Accessor<number>,
+    currentTime: Accessor<number>
 }
 
 export default Props;

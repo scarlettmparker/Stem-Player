@@ -10,7 +10,7 @@
 @layer utilities {
     .scrollbar::-webkit-scrollbar {
         width: 20px;
-        height: 10px;
+        height: 8px;
     }
 
     .scrollbar::-webkit-scrollbar-track {

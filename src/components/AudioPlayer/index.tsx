@@ -11,16 +11,16 @@ import Props from './props';
  * @param volume Volume of current audio element (0-1).
  * @returns JSX Element, invisible Audio Player.
  */
-const AudioPlayer: Component<Props> = ({ idx, name, playing, volume, master}) => {
+const AudioPlayer: Component<Props> = ({ idx, name, playing, volume, master, currentTime }) => {
     const src = `${API_BASE_URL}/${name}`;
     let audioElement: HTMLAudioElement | null = null;
 
     createEffect(() => {
         const currentVolume = volume() * master();
         if (audioElement) {
-            manageAudio(audioElement, currentVolume, master(), playing());
+            manageAudio(audioElement, currentVolume, master(), playing(), currentTime());
         }
-    }, [volume(), master(), idx, playing()]); 
+    }, [volume(), master(), idx, playing(), currentTime()]);
 
     return <audio ref={(el) => { audioElement = el; }} src={src} preload="auto" />;
 };

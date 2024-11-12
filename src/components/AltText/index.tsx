@@ -12,7 +12,7 @@ import { Accessor, createEffect } from "solid-js";
 const AltText = ({ name, dir, xPos, yPos, setAltText }: { name: string, dir?: string, xPos: number, yPos: number, setAltText: (value: boolean) => void }) => {
     const style = "absolute flex items-center justify-center bg-slate-900 text-white w-fit h-6 p-2 rounded-lg select-none";
     
-    const xOffset = (dir == 'vertical') ? 184 : 90; // accommodate for css
+    const xOffset = (dir == 'vertical') ? 192 : 90; // accommodate for css
     const yOffset = (dir == 'vertical') ? 32 : -4;
 
     let ref!: HTMLDivElement;
