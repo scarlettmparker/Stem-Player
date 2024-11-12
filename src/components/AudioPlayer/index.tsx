@@ -5,22 +5,22 @@ import Props from './props';
 
 /**
  * 
- * @param index Index of audio element for volume controls.
+ * @param idx Index of audio element for volume controls.
  * @param name Name of the current audio element (for file pathing).
  * @param playing Audio playing or not.
  * @param volume Volume of current audio element (0-1).
  * @returns JSX Element, invisible Audio Player.
  */
-const AudioPlayer: Component<Props> = ({ idx, name, playing, volume }) => {
+const AudioPlayer: Component<Props> = ({ idx, name, playing, volume, master}) => {
     const src = `${API_BASE_URL}/${name}`;
     let audioElement: HTMLAudioElement | null = null;
 
     createEffect(() => {
-        const currentVolume = volume();
+        const currentVolume = volume() * master();
         if (audioElement) {
-            manageAudio(audioElement, currentVolume, playing());
+            manageAudio(audioElement, currentVolume, master(), playing());
         }
-    }, [volume(), idx, playing()]); 
+    }, [volume(), master(), idx, playing()]); 
 
     return <audio ref={(el) => { audioElement = el; }} src={src} preload="auto" />;
 };

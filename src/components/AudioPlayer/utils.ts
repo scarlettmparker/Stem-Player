@@ -4,8 +4,8 @@
  * @param currentVolume Current volume of the audio.
  * @param playing Audio playing or not.
  */
-const manageAudio = (audioElement: HTMLAudioElement, currentVolume: number, playing: boolean) => {
-    audioElement.volume = currentVolume / 100;
+const manageAudio = (audioElement: HTMLAudioElement, currentVolume: number, master: number, playing: boolean) => {
+    audioElement.volume = (currentVolume * master);
     if (playing) {
         audioElement.play().catch((err) => {
             console.error("Error playing audio:", err);
